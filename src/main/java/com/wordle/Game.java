@@ -33,6 +33,32 @@ public class Game {
 		 *  		else prompt welcome and rules of the game. Create new Player, add to map
 		 * 		
 		 */
+
+
+		// read in text file: ReadFile .java
+		// if name exists in playerMap, 
+		if(ReadFile.playerMap.get(name) == null){
+			//is this how I check if null or is it is null
+			System.out.println("Welcome, " + name);
+			System.out.println("Here are the rules of Wordle:");
+			System.out.println("Guess the hidden 5-letter word in 5 tries.");
+			System.out.println();
+
+			System.out.println("After each guess, you'll get feedback:");
+
+			System.out.println("- " + Colors.tileGreen("GREEN") + "  → correct letter, correct position");
+			System.out.println("- " + Colors.tileYellow("YELLOW") + " → correct letter, wrong position");
+			System.out.println("- " + Colors.tileGray("GRAY") + "   → letter not in the word");
+
+			System.out.println();
+			System.out.println("Try to guess the word in as few attempts as possible!");
+			System.out.println();
+
+		}else{
+			System.out.println("Welcome back, " + ReadFile.playerMap.get(name)+ "!");
+		}
+		
+
 		Player player = new Player (name);
 	    System.out.println(player);
 	    scanner.close();
