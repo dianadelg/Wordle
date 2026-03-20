@@ -1,1 +1,2 @@
-// FILE FORMAT: name,wins1,wins2,wins3,wins4,wins5,losses,streak
+diana,1,2,3,4,5,6,15
+jacob,5,5,5,5,5,0,25
