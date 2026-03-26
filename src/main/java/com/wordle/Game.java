@@ -42,6 +42,9 @@ public class Game {
             System.out.println();
             System.out.println("Try to guess the word in as few attempts as possible!");
             System.out.println();
+            
+            Player newPlayer = new Player(name);
+            ReadFile.getPlayerMap().put(name, newPlayer);
 
         } else {
             System.out.println("Welcome back, " + name + "!");
