@@ -1,9 +1,7 @@
 package com.wordle;
 
-import java.io.File; // Import the File class
-import java.io.FileNotFoundException; // Import this class to handle errors
-import java.util.Arrays;
-import java.util.HashMap;
+import java.util.Arrays; // Import the File class
+import java.util.HashMap; // Import this class to handle errors
 import java.util.List;
 import java.util.Scanner;
 
@@ -13,9 +11,9 @@ public class ReadFile {
     private static HashMap<String, Player> playerMap = new HashMap<>();
 
     public static void ReadPlayers() {
-        File myObj = new File("src/main/resources/Players.txt"); // need to eventually switch to classpath
 
-        try (Scanner myReader = new Scanner(myObj)) {
+        // We use the ClassLoader to find the file inside the 'resources' folder
+        try (Scanner myReader = new Scanner(ReadFile.class.getResourceAsStream("/Players.txt"))) {
 
             playerMap = new HashMap<>();
 
@@ -36,13 +34,13 @@ public class ReadFile {
                 // key...
                 // and doesn't get used otherwise?
 
-                playerMap.put(currentPlayer.getName(), currentPlayer); // key is Diana, value is Player Object
+                playerMap.put(currentPlayer.getName().toLowerCase(), currentPlayer); // key is Diana, value is Player Object
             }
             // once we have all players, hashmap has been loaded
             // check if player exists in game. If so, welcome them
             // else create new player
             // should the above be done here or in game?
-        } catch (FileNotFoundException e) {
+        } catch (NullPointerException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
             // we need to return this error to game, so it terminates entire game

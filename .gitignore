@@ -1,1 +1,11 @@
-/target/
+# Ignore all compiled Java files
+*.class
+
+# Ignore the entire Maven build output folder
+target/
+
+# Ignore Mac system files
+.DS_Store
+
+# Optional: Ignore VS Code settings
+.vscode/

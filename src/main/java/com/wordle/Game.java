@@ -9,7 +9,9 @@ public class Game {
         System.out.println(Colors.blueText("Welcome to Wordle! :)"));
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please enter your name:");
-        String name = scanner.nextLine();
+        String name = scanner.nextLine().toLowerCase();
+
+        Player currentPlayer;
 
         // TO DO: scan if name in file. If existing, welcome them back and load stats.
         // Else say welcome to fist game, create player, print rules
@@ -42,19 +44,20 @@ public class Game {
             System.out.println();
             System.out.println("Try to guess the word in as few attempts as possible!");
             System.out.println();
-            
-            Player newPlayer = new Player(name);
-            ReadFile.getPlayerMap().put(name, newPlayer);
+
+            currentPlayer = new Player(name);
+            ReadFile.getPlayerMap().put(name, currentPlayer);
 
         } else {
-            System.out.println("Welcome back, " + name + "!");
+            currentPlayer = ReadFile.getPlayerMap().get(name);
+            System.out.println("Welcome back, " + currentPlayer.getName() + "!");
         }
 
         // we're going to also want to show which letters have been guessed already and
         // color code
         // based on if in puzzle or not -- maybe a later feature?
         //ALSO, currently name is case sensitive -- so diana and Diana are two different people
-        Player currentPlayer = ReadFile.getPlayerMap().get(name);
+        currentPlayer = ReadFile.getPlayerMap().get(name);
         System.out.println(currentPlayer);
         scanner.close();
 
