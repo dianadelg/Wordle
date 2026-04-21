@@ -3,6 +3,11 @@ package com.wordle;
 import java.util.Scanner;
 
 public class Game {
+	
+public static String secretWord = new String(); //want to move this to Game since word is dependent on the round of the game
+//we will use the method from wordBank that selects a random word because WordBank holds the responsibility of holding words -
+//Because picking a random word still depends on the dictionary data
+public static int numberOfGuesses = 0;
 
     public static void main(String[] args) {
 
@@ -60,7 +65,23 @@ public class Game {
         currentPlayer = ReadFile.getPlayerMap().get(name);
         System.out.println(currentPlayer);
         scanner.close();
+        
+        //Load the words, create a new WordBank object
+        WordBank currentWords = new WordBank();
+        
+        //Pick the random word for the game
+        secretWord = currentWords.getRandomWord();
+        System.out.println("The secret word is: "+ secretWord);
+        
+        //Next step -- rounds!!!
 
     }
+    
+    //TODO: method for valid length of guess
+    //TODO: method for empty guess
+    //TODO: method for duplicate guess
+    //TODO: method for comparing to secret word
+    //TODO: method for deciding if there's a win or loss
+    //TODO: method for updating player stats at end of game
 
 }

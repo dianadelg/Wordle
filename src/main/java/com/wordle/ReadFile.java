@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class ReadFile {
     // need to create constructor to initialize player hashmap?
 
-    private static HashMap<String, Player> playerMap = new HashMap<>();
+    private static HashMap<String, Player> playerMap = new HashMap<>(); // should this be initialized here or in the method? line 18 seems redundant
 
     public static void ReadPlayers() {
 
