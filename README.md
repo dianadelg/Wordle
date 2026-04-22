@@ -2,8 +2,6 @@
 
 A command-line implementation of the Wordle game built in Java, featuring persistent player statistics, dictionary-based validation, and a clean object-oriented design.
 
-Developed collaboratively with **Jacob Melancon**.
-
 ---
 
 ## Overview
