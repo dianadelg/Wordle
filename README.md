@@ -41,17 +41,14 @@ This project recreates Wordle in a terminal environment with a focus on:
 ---
 
 src/main/java/com/wordle
-├── Game.java // Game flow and input handling
-├── Player.java // Player stats and analytics
-├── WordBank.java // Dictionary loading and validation
-├── Colors.java // Optional CLI color helper
+- Game.java // Game flow and input handling
+- Player.java // Player stats and analytics
+- WordBank.java // Dictionary loading and validation
+- Colors.java // Optional CLI color helper
 
 src/main/resources
-├── Words.txt // Dictionary of valid words
-├── Players.txt // Persistent player data
-
----
-
+- Words.txt // Dictionary of valid words
+- Players.txt // Persistent player data
 
 ---
 
